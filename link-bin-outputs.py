@@ -3,7 +3,6 @@ import itertools
 import argparse
 import os.path
 import json
-import sys
 
 argparser = argparse.ArgumentParser(
     description='Link bin outputs based on package.json contents')
