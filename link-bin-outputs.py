@@ -5,11 +5,6 @@ import os.path
 import json
 import sys
 
-# utf-8 encoding
-reload(sys)
-sys.setdefaultencoding('utf8')
-
-
 argparser = argparse.ArgumentParser(
     description='Link bin outputs based on package.json contents')
 argparser.add_argument(
@@ -60,6 +55,9 @@ if __name__ == '__main__':
             args.bin_out, args.lib_out, itertools.chain(
                 get_bin_attr_files(package_json),
                 get_directories_bin_attr_files(args.lib_out, package_json))):
+
+        fin = fin.encode("utf-8");
+        fout = fout.encode("utf-8");
 
         os.symlink(fin, fout)
         os.chmod(fout, 0o755)
