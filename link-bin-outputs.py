@@ -3,6 +3,11 @@ import itertools
 import argparse
 import os.path
 import json
+import sys
+
+# utf-8 encoding
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 argparser = argparse.ArgumentParser(
